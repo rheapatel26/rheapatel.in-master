@@ -255,7 +255,7 @@ body{
 #backgroundVideo {
     width: 100%; /* Make video take full width */
     height: 100%; /* Make video take full height */
-    opacity: 0.4    ;
+    opacity: 0.2;
     border-radius: 1vw; /* Keep border radius */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
