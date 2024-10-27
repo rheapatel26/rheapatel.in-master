@@ -139,14 +139,28 @@ body{
     }
 }
 
+#skillhead{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+}
+#skillcontainerdiv{
+    background-color: transparent;
+    height: 30vw;
+    overflow: hidden; /* Hide overflow to create the endless effect */
+    position: relative;
+}
 
 #skillcontainer {
     width: 10vw;
-    height: 12vw;
+    height: calc(10% * 3);
     font-family: "Montserrat", sans-serif; 
     background-color: rgba(245, 245, 245, 0.279);
     border-radius: 1vw;
+    background-color: transparent;
     padding-left: 2vw;
+    animation: scroll 20s linear infinite;
     padding-bottom: 2vw;
     display: flex; /* Use flexbox to center content */
     justify-content: center; /* Center horizontally */
@@ -154,10 +168,68 @@ body{
     overflow: hidden; /* Hide overflow if needed */
 }
 
+
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-100% * 5)); } /* Adjust based on the number of slides */
+}
+
+
+.slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    height: 300px; /* Adjust height as needed */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 250px; /* Adjust width as needed */
+
+    ::before,
+    ::after {
+        @include white-gradient;
+        content: "";
+        height: 100%;
+        position: absolute;
+        width: 100px; /* Adjust based on your preference */
+        z-index: 2;
+    }
+
+    &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+    }
+    
+    .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        flex-direction: column; /* Change to vertical stacking */
+        height: calc(100% * 14); /* Adjust based on the number of slides */
+    }
+    
+    .slide {
+        height: 100px; /* Height of each skill container */
+        width: 100%; /* Full width of the slider */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* For absolute positioning of the video */
+    }
+}
+
+
+.skillcontainer {
+    animation: move 15s linear infinite; /* Apply the same animation */
+}
 #backgroundVideo {
     width: 100%; /* Make video take full width */
     height: 100%; /* Make video take full height */
-    opacity: 0.7;
+    opacity: 0.4    ;
     border-radius: 1vw; /* Keep border radius */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
 }

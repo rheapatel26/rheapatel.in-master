@@ -34,3 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
 });
 
+const container = document.getElementById('skillcontainer');
+container.addEventListener('mouseover', () => {
+    container.style.animationPlayState = 'paused';
+});
+
+container.addEventListener('mouseout', () => {
+    container.style.animationPlayState = 'running';
+});
+
