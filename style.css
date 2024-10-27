@@ -167,12 +167,39 @@ body{
     align-items: center; /* Center vertically */
     overflow: hidden; /* Hide overflow if needed */
 }
+#skillcontainer2 {
+    width: 10vw;
+    height: calc(10% * 3);
+    font-family: "Montserrat", sans-serif; 
+    background-color: rgba(245, 245, 245, 0.279);
+    border-radius: 1vw;
+    background-color: transparent;
+    padding-left: 2vw;
+    animation: moveDown 20s linear infinite;
+    padding-bottom: 2vw;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide overflow if needed */
+}
+#skillcontainerdiv2 {
+    background-color: transparent;
+    height: 30vw;
+    overflow: hidden; /* Hide overflow to create the endless effect */
+    position: relative;
+}
 
 
 @keyframes scroll {
     0% { transform: translateY(0); }
     100% { transform: translateY(calc(-100% * 5)); } /* Adjust based on the number of slides */
 }
+@keyframes moveDown {
+    0% { transform: translateY(calc(-100% * 5)); }
+    100% { transform: translateY(0); } /* Move it down */
+}
+
+
 
 
 .slider {
@@ -186,7 +213,6 @@ body{
 
     ::before,
     ::after {
-        @include white-gradient;
         content: "";
         height: 100%;
         position: absolute;
@@ -237,4 +263,8 @@ body{
 #skill {
     z-index: 100000;
     position: absolute;
+}
+
+#skills{
+    display: flex;
 }
