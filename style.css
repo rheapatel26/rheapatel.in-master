@@ -275,7 +275,7 @@ body{
     height: 40px;
     border-radius: 50%; /* Make it circular */
     pointer-events: none; /* Prevent interaction */
-    background-image: url(assets/images/cursorbg2.png);
+    background-image: url(assets/images/cursorcursor.png);
     position: absolute;
     transform: translate(-50%, -50%); 
     /* transition: transform 0.1s ease;/* Optional: create a unique visual effect */
