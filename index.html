@@ -21,13 +21,29 @@
         <p id="typewriter">Rhea Patel</p>
     </div>
     <div class="side-navbar">
-        <div> <a href="" style="text-decoration: none;"><p>About</p> </a><hr></div>
-        <div> <a href="" style="text-decoration: none;"><p>Projects</p></a><hr></div>
-        <div> <a href="" style="text-decoration: none;"><p>Resume</p></a><hr></div>
-        <div> <a href="" style="text-decoration: none;"><p>Contact</p></a><hr></div>
+        <div> <a href="" style="text-decoration: none;">
+                <p>About</p>
+            </a>
+            <hr>
+        </div>
+        <div> <a href="" style="text-decoration: none;">
+                <p>Projects</p>
+            </a>
+            <hr>
+        </div>
+        <div> <a href="" style="text-decoration: none;">
+                <p>Resume</p>
+            </a>
+            <hr>
+        </div>
+        <div> <a href="" style="text-decoration: none;">
+                <p>Contact</p>
+            </a>
+            <hr>
+        </div>
     </div>
     <div class="self-info">
-        <div class="self-info-detail"> 
+        <div class="self-info-detail">
             <p>Innovator</p>
             <img src="assets\images\arrowbg.png" alt="" class="sqrbg">
             <hr>
@@ -40,21 +56,66 @@
         <div class="self-info-detail">
             <p>Empower</p>
             <img src="assets\images\arrowbg.png" alt="" class="sqrbg" style="margin-left: 22vw;">
-            <hr>    
+            <hr>
         </div>
     </div>
-    
+
     <br><br><br><br><br><br><br><br><br><br><br><br>
-    <hr><br><br><hr>
-    <br><br><br>
-    <div id="skillhead">
-        <h1>SKILL SETS</h1>
+    <hr><br><br>
+    <hr><br><br>
+    <div id="abtme">
+        <h1>MEET THE CREATOR.</h1>
     </div>
-    
+    <div id="abtmediv">
+        <p id="p1abtme"> <span style="font-weight: bold;">Rhea Patel</span> is an engineering undergraduate and AI/ML
+            enthusiast with a passion for business data science and a knack for turning complex ideas into engaging
+            narratives & solutions.</p>
+        <hr style="width: 20vw; margin-left: 5vw; height: 1px; background-color: black; border: none;">
+        <div id="abtrhea" class="carousel-fade">
+            <div class="carousel-item active">
+                <p>cout << "Great Problem Solving" ;</p>
+            </div>
+            <div class="carousel-item">
+                <p>cout << "Strong Communication" ;</p>
+            </div>
+            <div class="carousel-item">
+                <p>cout << "Adaptability" ;</p>
+            </div>
+            <div class="carousel-item">
+                <p>cout << "Creativity" ;</p>
+            </div>
+            <div class="carousel-item">
+                <p>cout << "Collaboration" ;</p>
+            </div>
+        </div>
+        <script>
+            let currentIndex = 0;
+            const items = document.querySelectorAll('.carousel-item');
+
+            function showNext() {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % items.length; // Loop back to the first item
+                items[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNext, 3000); // Change every 3 seconds
+
+        </script>
+
+        <img src="assets/images/rplogo.png" alt="" style="width: 22vw;height: 15vw; margin-top: -17vw; margin-left: 40vw; opacity: 0.85;">
+        <!-- <img src="assets/images/rplogo2.png" alt="" style="width: 22vw;height: 15vw; margin-top: -17vw; margin-left: 40vw;"> -->
+        <hr style="rotate: 90deg;width: 32.3vw; margin-left: 73vw;position: absolute; margin-top: -13.1vw;">
+        <br>
+    </div>
+    <br><br><hr><br><br>
+    <div id="skillhead">
+        <h1>SKILL SETS.</h1>
+    </div>
+
     <div id="skills">
         <div id="skillcontainerdiv">
             <div id="skillcontainer">
-                <video autoplay muted loop id="backgroundVideo" >
+                <video autoplay muted loop id="backgroundVideo">
                     <source src="assets/videos/bluemovingbg.mp4" type="video/mp4">
                 </video>
                 <h5 id="skill">JAVA</h5>
@@ -99,7 +160,7 @@
         <br><br><br><br><br>
         <div id="skillcontainerdiv2" style="margin-left: 2vw;">
             <div id="skillcontainer2" class="second-container">
-                <video autoplay muted loop id="backgroundVideo" >
+                <video autoplay muted loop id="backgroundVideo">
                     <source src="assets/videos/bluemovingbg.mp4" type="video/mp4">
                 </video>
                 <h5 id="skill">ANDROID <br>STUDIO</h5>
@@ -147,10 +208,10 @@
     <script>
         const cursor = document.querySelector('.gradient-cursor');
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
-});
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
     </script>
 </body>
 

@@ -280,3 +280,41 @@ body{
     transform: translate(-50%, -50%); 
     /* transition: transform 0.1s ease;/* Optional: create a unique visual effect */
 }
+
+#abtme {
+    font-family: "Montserrat", sans-serif;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+#p1abtme{
+    width: 35vw;
+    padding-left: 5vw;
+    font-size: larger;
+    font-family: "Montserrat", sans-serif;
+    word-spacing: 1vw;
+}
+#abtrhea{
+    padding-left: 5vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+.carousel-fade {
+    position: relative;
+    overflow: hidden;
+    height: 100px; 
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%; /* Make it full width */
+    height: 100%; /* Make it full height */
+}
+
+.carousel-item.active {
+    opacity: 1;
+}

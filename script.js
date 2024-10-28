@@ -44,8 +44,19 @@ container.addEventListener('mouseout', () => {
 });
 
 const cursor = document.querySelector('.gradient-cursor');
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
 
+function showNext() {
+    items[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % items.length; // Loop back to the first item
+    items[currentIndex].classList.add('active');
+}
+
+setInterval(showNext, 3000); // Change every 3 seconds
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = `${e.pageX}px`;
         cursor.style.top = `${e.pageY}px`;
     });
+
+    
