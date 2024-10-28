@@ -5,6 +5,7 @@ body{
     background-position: center;
     margin: 0;
     padding: 0;
+    cursor: none;
 }
 
 /* fonts */
@@ -267,4 +268,15 @@ body{
 
 #skills{
     display: flex;
+}
+.gradient-cursor {
+    position: absolute;
+    width: 40px; /* Diameter of the cursor */
+    height: 40px;
+    border-radius: 50%; /* Make it circular */
+    pointer-events: none; /* Prevent interaction */
+    background-image: url(assets/images/cursorbg2.png);
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    /* transition: transform 0.1s ease;/* Optional: create a unique visual effect */
 }

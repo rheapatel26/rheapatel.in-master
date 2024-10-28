@@ -43,3 +43,9 @@ container.addEventListener('mouseout', () => {
     container.style.animationPlayState = 'running';
 });
 
+const cursor = document.querySelector('.gradient-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });

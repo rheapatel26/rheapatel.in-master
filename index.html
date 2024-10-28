@@ -138,12 +138,20 @@
                 <video autoplay muted loop id="backgroundVideo">
                     <source src="assets/videos/bluemovingbg.mp4" type="video/mp4">
                 </video>
-                <h5 id="skill">EXCEL</h5>
+                <h5 id="skill">MICROSFT <br> EXCEL</h5>
             </div>
         </div>
     </div>
     <br><br><br><br><br>
-    
+    <div class="gradient-cursor"></div>
+    <script>
+        const cursor = document.querySelector('.gradient-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+    </script>
 </body>
 
 </html>
