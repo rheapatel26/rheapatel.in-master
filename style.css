@@ -295,6 +295,34 @@ body{
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
 }
+    #p2abtme{
+        width: 30vw;
+        padding-left: 58vw;
+        margin-top: -17.5vw;
+        font-size: medium;
+        position: absolute;
+        font-family: "Montserrat", sans-serif;
+        word-spacing: 1vw;
+        text-align: right;
+    }
+    #p3abtme{
+        width: 28vw;
+        padding-left: 60vw;
+        margin-top: -6vw;
+        font-size: medium;
+        position: absolute;
+        font-family: "Montserrat", sans-serif;
+        word-spacing: 1vw;
+        text-align: right;
+    }
+    #mygoal{
+        font-family: "Montserrat", sans-serif;
+        color: rgb(81, 81, 81);
+        margin-top: -8.5vw;
+        padding-left: 19vw;
+        font-size: 15px;
+        font-style: italic;
+    }
 #abtrhea{
     padding-left: 5vw;
     font-family: "Montserrat", sans-serif;
