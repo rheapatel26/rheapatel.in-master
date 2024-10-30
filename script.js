@@ -6,7 +6,7 @@ function typeWriter() {
     if (i < text.length) {
         document.getElementById('typewriter').innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter,20); // Adjust typing speed here (milliseconds)
+        setTimeout(typeWriter, 20); // Adjust typing speed here (milliseconds)
     }
 }
 
@@ -54,9 +54,8 @@ function showNext() {
 }
 
 setInterval(showNext, 3000); // Change every 3 seconds
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
-    });
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
 
-    

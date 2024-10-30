@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url("assets/images/bg3.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,20 +10,22 @@ body{
 
 /* fonts */
 
-.montserrat{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
 }
 
 
-.head-div p{
+.head-div p {
     font-family: "Montserrat", sans-serif;
     font-size: 8vw;
     padding-left: 2vw;
 }
+
 #typewriter {
     border-right: 0.04em solid orange;
     white-space: nowrap;
+    padding-left: 2vw;
     overflow: hidden;
     animation: typing 3.5s steps(20, end) infinite, blink-caret .75s step-end infinite;
 }
@@ -32,23 +34,27 @@ body{
     from {
         width: 0;
     }
+
     to {
-        width: calc(100% + .15em); 
+        width: calc(100% + .15em);
     }
 }
 
 @keyframes blink-caret {
-    from, to {
+
+    from,
+    to {
         border-color: transparent;
     }
+
     50% {
         border-color: black;
     }
 }
 
-  
+
 /* side nav bar */
-.side-navbar{
+.side-navbar {
     display: block;
     position: fixed;
     font-family: "Montserrat", sans-serif;
@@ -56,7 +62,7 @@ body{
     padding-right: 2vw;
     margin-top: -1vw;
     right: 1vw;
-    transition: right 0.3s ease; 
+    transition: right 0.3s ease;
     animation: slideInRight 2s forwards;
     text-decoration: none;
 }
@@ -67,11 +73,12 @@ body{
 
 @keyframes slideInRight {
     from {
-        right: -300px; 
+        right: -300px;
         color: transparent;
     }
+
     to {
-        right: 1vw; 
+        right: 1vw;
     }
 }
 
@@ -81,15 +88,17 @@ body{
     margin-left: 2vw;
     margin-top: -5vw;
     font-family: "Montserrat", sans-serif;
-    animation: topslide 2s forwards; /* Animation properties */
-    position: relative; /* Positioning is required for 'top' property to work */
+    animation: topslide 2s forwards;
+    /* Animation properties */
+    position: relative;
+    /* Positioning is required for 'top' property to work */
 }
 
 .self-info-detail {
     margin-left: 6vw;
 }
 
-.sqrbg{
+.sqrbg {
     width: 6vw;
     position: absolute;
     left: 5.8vw;
@@ -101,19 +110,26 @@ body{
 @keyframes topslide {
     from {
         top: -10px;
-        color: transparent; /* Starting position outside the viewport */
+        color: transparent;
+        /* Starting position outside the viewport */
     }
+
     to {
-        top: 1vw; /* Final position after animation (adjust as needed) */
+        top: 1vw;
+        /* Final position after animation (adjust as needed) */
     }
 }
+
 @keyframes topslidelogo {
     from {
         top: 0px;
-        color: transparent; /* Starting position outside the viewport */
+        color: transparent;
+        /* Starting position outside the viewport */
     }
+
     to {
-        top: 1-1vw; /* Final position after animation (adjust as needed) */
+        top: 1-1vw;
+        /* Final position after animation (adjust as needed) */
     }
 }
 
@@ -121,83 +137,121 @@ body{
 /* Media Query for Phones */
 @media (max-width: 768px) {
     .head-div p {
-        font-size: 12vw; /* Increase font size for smaller screens */
+        font-size: 12vw;
+        /* Increase font size for smaller screens */
     }
+
     .side-navbar {
-        font-size: 2.5vw; /* Adjust font size for side navbar */
-        top: 10vw; /* Adjust top position for smaller screens */
+        font-size: 2.5vw;
+        /* Adjust font size for side navbar */
+        top: 10vw;
+        /* Adjust top position for smaller screens */
     }
+
     .self-info {
-        font-size: 3.5vw; /* Adjust font size for self-info section */
-        margin-top: -10vw; /* Adjust margin for self-info section */
+        font-size: 3.5vw;
+        /* Adjust font size for self-info section */
+        margin-top: -10vw;
+        /* Adjust margin for self-info section */
     }
+
     /* need to adjust the gap between the 3 pictures */
     .sqrbg {
-        width: 12vw; /* Adjust size for smaller screens */
+        width: 12vw;
+        /* Adjust size for smaller screens */
         left: calc(50% - 25vw);
-        height: 10vw; /* Adjust position for smaller screens */
-        top: -5vw; 
+        height: 10vw;
+        /* Adjust position for smaller screens */
+        top: -5vw;
     }
 }
 
-#skillhead{
-    display: flex; 
-    justify-content: center; 
+#skillhead {
+    display: flex;
+    justify-content: center;
     align-items: center;
     font-family: "Montserrat", sans-serif;
 }
-#skillcontainerdiv{
+
+#skillcontainerdiv {
     background-color: transparent;
     height: 30vw;
-    overflow: hidden; /* Hide overflow to create the endless effect */
+    overflow: hidden;
+    /* Hide overflow to create the endless effect */
     position: relative;
 }
 
 #skillcontainer {
     width: 10vw;
     height: calc(10% * 3);
-    font-family: "Montserrat", sans-serif; 
+    font-family: "Montserrat", sans-serif;
     background-color: rgba(245, 245, 245, 0.279);
     border-radius: 1vw;
     background-color: transparent;
     padding-left: 2vw;
     animation: scroll 20s linear infinite;
     padding-bottom: 2vw;
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    overflow: hidden; /* Hide overflow if needed */
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    overflow: hidden;
+    /* Hide overflow if needed */
 }
+
 #skillcontainer2 {
     width: 10vw;
     height: calc(10% * 3);
-    font-family: "Montserrat", sans-serif; 
+    font-family: "Montserrat", sans-serif;
     background-color: rgba(245, 245, 245, 0.279);
     border-radius: 1vw;
     background-color: transparent;
     padding-left: 2vw;
     animation: moveDown 20s linear infinite;
     padding-bottom: 2vw;
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    overflow: hidden; /* Hide overflow if needed */
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    overflow: hidden;
+    /* Hide overflow if needed */
 }
+
 #skillcontainerdiv2 {
     background-color: transparent;
     height: 30vw;
-    overflow: hidden; /* Hide overflow to create the endless effect */
+    overflow: hidden;
+    /* Hide overflow to create the endless effect */
     position: relative;
 }
 
 
 @keyframes scroll {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(calc(-100% * 5)); } /* Adjust based on the number of slides */
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(-100% * 5));
+    }
+
+    /* Adjust based on the number of slides */
 }
+
 @keyframes moveDown {
-    0% { transform: translateY(calc(-100% * 5)); }
-    100% { transform: translateY(0); } /* Move it down */
+    0% {
+        transform: translateY(calc(-100% * 5));
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+    /* Move it down */
 }
 
 
@@ -206,18 +260,21 @@ body{
 .slider {
     background: white;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-    height: 300px; /* Adjust height as needed */
+    height: 300px;
+    /* Adjust height as needed */
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 250px; /* Adjust width as needed */
+    width: 250px;
+    /* Adjust width as needed */
 
     ::before,
     ::after {
         content: "";
         height: 100%;
         position: absolute;
-        width: 100px; /* Adjust based on your preference */
+        width: 100px;
+        /* Adjust based on your preference */
         z-index: 2;
     }
 
@@ -231,34 +288,45 @@ body{
         left: 0;
         top: 0;
     }
-    
+
     .slide-track {
         animation: scroll 40s linear infinite;
         display: flex;
-        flex-direction: column; /* Change to vertical stacking */
-        height: calc(100% * 14); /* Adjust based on the number of slides */
+        flex-direction: column;
+        /* Change to vertical stacking */
+        height: calc(100% * 14);
+        /* Adjust based on the number of slides */
     }
-    
+
     .slide {
-        height: 100px; /* Height of each skill container */
-        width: 100%; /* Full width of the slider */
+        height: 100px;
+        /* Height of each skill container */
+        width: 100%;
+        /* Full width of the slider */
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative; /* For absolute positioning of the video */
+        position: relative;
+        /* For absolute positioning of the video */
     }
 }
 
 
 .skillcontainer {
-    animation: move 15s linear infinite; /* Apply the same animation */
+    animation: move 15s linear infinite;
+    /* Apply the same animation */
 }
+
 #backgroundVideo {
-    width: 100%; /* Make video take full width */
-    height: 100%; /* Make video take full height */
+    width: 100%;
+    /* Make video take full width */
+    height: 100%;
+    /* Make video take full height */
     opacity: 0.2;
-    border-radius: 1vw; /* Keep border radius */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 1vw;
+    /* Keep border radius */
+    object-fit: cover;
+    /* Maintain aspect ratio and cover the container */
 }
 
 #skill {
@@ -266,81 +334,92 @@ body{
     position: absolute;
 }
 
-#skills{
+#skills {
     display: flex;
 }
+
 .gradient-cursor {
     position: absolute;
-    width: 40px; /* Diameter of the cursor */
+    width: 40px;
+    /* Diameter of the cursor */
     height: 40px;
-    border-radius: 50%; /* Make it circular */
-    pointer-events: none; /* Prevent interaction */
+    border-radius: 50%;
+    /* Make it circular */
+    pointer-events: none;
+    /* Prevent interaction */
     background-image: url(assets/images/cursorcursor.png);
     position: absolute;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     /* transition: transform 0.1s ease;/* Optional: create a unique visual effect */
 }
 
 #abtme {
     font-family: "Montserrat", sans-serif;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#p1abtme{
+#p1abtme {
     width: 35vw;
     padding-left: 5vw;
     font-size: larger;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
 }
-    #p2abtme{
-        width: 30vw;
-        padding-left: 58vw;
-        margin-top: -17.5vw;
-        font-size: medium;
-        position: absolute;
-        font-family: "Montserrat", sans-serif;
-        word-spacing: 1vw;
-        text-align: right;
-    }
-    #p3abtme{
-        width: 28vw;
-        padding-left: 60vw;
-        margin-top: -6vw;
-        font-size: medium;
-        position: absolute;
-        font-family: "Montserrat", sans-serif;
-        word-spacing: 1vw;
-        text-align: right;
-    }
-    #mygoal{
-        font-family: "Montserrat", sans-serif;
-        color: rgb(81, 81, 81);
-        margin-top: -8.5vw;
-        padding-left: 19vw;
-        font-size: 15px;
-        font-style: italic;
-    }
-#abtrhea{
+
+#p2abtme {
+    width: 30vw;
+    padding-left: 58vw;
+    margin-top: -17.5vw;
+    font-size: medium;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    word-spacing: 1vw;
+    text-align: right;
+}
+
+#p3abtme {
+    width: 28vw;
+    padding-left: 60vw;
+    margin-top: -6vw;
+    font-size: medium;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    word-spacing: 1vw;
+    text-align: right;
+}
+
+#mygoal {
+    font-family: "Montserrat", sans-serif;
+    color: rgb(81, 81, 81);
+    margin-top: -8.5vw;
+    padding-left: 19vw;
+    font-size: 15px;
+    font-style: italic;
+}
+
+#abtrhea {
     padding-left: 5vw;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-style: italic;
 }
+
 .carousel-fade {
     position: relative;
     overflow: hidden;
-    height: 100px; 
+    height: 100px;
 }
 
 .carousel-item {
     position: absolute;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    width: 100%; /* Make it full width */
-    height: 100%; /* Make it full height */
+    width: 100%;
+    /* Make it full width */
+    height: 100%;
+    /* Make it full height */
 }
 
 .carousel-item.active {
