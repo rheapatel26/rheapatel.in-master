@@ -60,7 +60,7 @@ body {
     font-family: "Montserrat", sans-serif;
     float: right;
     padding-right: 2vw;
-    margin-top: -1vw;
+    margin-top: -15vw;
     right: 1vw;
     transition: right 0.3s ease;
     animation: slideInRight 2s forwards;
@@ -363,6 +363,7 @@ body {
 #p1abtme {
     width: 35vw;
     padding-left: 5vw;
+    line-height: 1.8vw;
     font-size: larger;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
@@ -371,8 +372,8 @@ body {
 #p2abtme {
     width: 30vw;
     padding-left: 58vw;
-    margin-top: -17.5vw;
-    font-size: medium;
+    margin-top: -18vw;
+    font-size: 1vw;
     position: absolute;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
@@ -382,8 +383,19 @@ body {
 #p3abtme {
     width: 28vw;
     padding-left: 60vw;
-    margin-top: -6vw;
-    font-size: medium;
+    margin-top: -9vw;
+    font-size: 1vw;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    word-spacing: 1vw;
+    text-align: right;
+}
+#p4abtme {
+    width: 29vw;
+    margin-top: 0vw;
+    padding-left: 59vw;
+    /* padding-left: 5vw; */
+    font-size: 1vw;
     position: absolute;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
