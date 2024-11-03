@@ -367,12 +367,14 @@ body {
     font-size: larger;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
+    font-style: italic;
 }
 
 #p2abtme {
     width: 30vw;
     padding-left: 58vw;
     margin-top: -18vw;
+    line-height: 1.5vw;
     font-size: 1vw;
     position: absolute;
     font-family: "Montserrat", sans-serif;
@@ -383,19 +385,22 @@ body {
 #p3abtme {
     width: 28vw;
     padding-left: 60vw;
-    margin-top: -9vw;
+    margin-top: -8vw;
     font-size: 1vw;
+    line-height: 1.5vw;
     position: absolute;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;
     text-align: right;
 }
+
 #p4abtme {
-    width: 29vw;
-    margin-top: 0vw;
-    padding-left: 59vw;
+    width: 30vw;
+    margin-top: 2vw;
+    padding-left: 58vw;
     /* padding-left: 5vw; */
     font-size: 1vw;
+    line-height: 1.5vw;
     position: absolute;
     font-family: "Montserrat", sans-serif;
     word-spacing: 1vw;

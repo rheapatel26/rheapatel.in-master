@@ -13,7 +13,7 @@ function typeWriter() {
 function resetTypewriter() {
     const typewriter = document.getElementById('typewriter');
     typewriter.style.animation = 'none';
-    typewriter.offsetHeight; /* trigger reflow */
+    typewriter.offsetHeight;
     typewriter.style.animation = null;
     setTimeout(() => {
         typewriter.style.animation = 'typing 3.5s steps(20, end) infinite, blink-caret .75s step-end infinite';
@@ -58,4 +58,3 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.left = `${e.pageX}px`;
     cursor.style.top = `${e.pageY}px`;
 });
-
