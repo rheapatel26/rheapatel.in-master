@@ -31,11 +31,24 @@
             </a>
             <hr>
         </div>
-        <div> <a href="" style="text-decoration: none;">
+        <div> 
+            <a href="assets/images/Personal CV draft 1.0.pdf" 
+               download="Resume" 
+               style="text-decoration: none;" 
+               onclick="return confirmDownload();">
                 <p>Resume</p>
             </a>
             <hr>
         </div>
+        
+        <script>
+            function confirmDownload() {
+                var userConfirmed = confirm("Are you sure you want to download the resume PDF?");
+                return userConfirmed; // If the user clicks "Yes", the download proceeds; otherwise, it stops
+            }
+        </script>
+        
+        
         <div> <a href="" style="text-decoration: none;">
                 <p>Contact</p>
             </a>
@@ -220,6 +233,21 @@
                     <source src="assets/videos/bluemovingbg.mp4" type="video/mp4">
                 </video>
                 <h5 id="skill">MICROSFT <br> EXCEL</h5>
+            </div>
+        </div>
+        <div id="certificationsdiv">
+            <h2>CERTIFICATIONS.</h2><br>
+            <div class="certidiv-indi">
+                <div class="certi1">
+                    <img src="assets/images/Add a heading.png" alt="" class="certilogo">
+                    <a href="https://learn.microsoft.com/en-us/users/rheapatel-1098/achievements/7pxpttxz?ref=https%3A%2F%2Fassignments.onenote.com%2F" ><h3 class="certihead">Microsoft Azure</h3></a>
+                    <h5 class="h5head">by Microsoft Learn Student Ambassador (MLSA)</h5>
+                </div>
+                <div class="certi1">
+                    <img src="assets/images/Add a heading.png" alt="" class="certilogo">
+                    <h3 class="certihead">IBM Learn</h3>
+                    <h5 class="h5head">AI Enterprise Workflow: End to End creation & deployment of ML Models</h5>
+                </div>
             </div>
         </div>
     </div>

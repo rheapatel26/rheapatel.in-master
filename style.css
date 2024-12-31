@@ -1,5 +1,5 @@
 body {
-    background-image: url("assets/images/bg3.png");
+    background-image: url("assets/images/bg3.png ");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -170,6 +170,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -12vw;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -228,7 +229,15 @@ body {
     /* Hide overflow to create the endless effect */
     position: relative;
 }
+#certificationsdiv{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 12vw;
+}
 
+.certidiv-indi{
+    display: flex;
+    gap: 20px;
+}
 
 @keyframes scroll {
     0% {
@@ -441,4 +450,32 @@ body {
 
 .carousel-item.active {
     opacity: 1;
+}
+
+.certi1{
+    border: gray solid 2px;
+    border-radius: 2vw;
+    height: 13vw;
+    width: 12vw;
+    display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        text-align: center;
+    padding: 1vw;
+    
+}
+.certilogo {
+    width: 4vw;
+    height: 6vw;
+    opacity: 0.6;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from the parent element */
+}
+.h5head{
+    margin-top: -1vw;
+    color: rgb(97, 97, 97);
 }
