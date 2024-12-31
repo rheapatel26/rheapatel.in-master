@@ -452,30 +452,95 @@ body {
     opacity: 1;
 }
 
-.certi1{
-    border: gray solid 2px;
-    border-radius: 2vw;
-    height: 13vw;
-    width: 12vw;
+.certidiv-indi {
     display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center; 
-        text-align: center;
-    padding: 1vw;
-    
+    justify-content: space-between;
+    gap: 2vw; 
 }
+
+.certi1 {
+    /* border: gray solid 2px; */
+    border-radius: 2vw;
+    height: 14vw;
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1vw;
+    overflow: hidden;
+    position: relative; /* Ensure absolute children are positioned relative to this div */
+}
+
+/* Background video */
+#backgroundVideo2 {
+    position: absolute; /* Ensures the video is behind all other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.3;
+    height: 100%;
+    object-fit: cover; /* Cover the entire div without distortion */
+    z-index: -1; /* Put the video behind all content */
+}
+
+/* Logo styles */
 .certilogo {
     width: 4vw;
     height: 6vw;
     opacity: 0.6;
 }
 
+/* Anchor styles (for the link around the heading and arrow) */
 a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit color from the parent element */
+    position: relative; /* To ensure positioning of the arrow */
 }
-.h5head{
+
+/* Heading styles */
+.certihead {
+    font-size: 1.4vw; /* White text to be visible over the video */
+    position: relative;
+    z-index: 1; /* Keep the text in front of the video */
+}
+
+/* Arrow animations */
+.arrowtocerti, .arrowtocerti2 {
+    width: 1.5vw;
+    height: 1.5vw;
+    position: absolute;
+    animation: moveArrow 2s ease-in-out infinite;
+    z-index: 1; 
+}
+
+.arrowtocerti {
+    transform: translateX(750%);
+    bottom: 1.5vw; /* Position the arrow under the heading */
+}
+
+.arrowtocerti2 {
+    transform: translateX(750%);
+    bottom: 6vw; /* Position the arrow under the heading */
+}
+
+/* Text styles for the smaller heading (h5) */
+.h5head {
     margin-top: -1vw;
     color: rgb(97, 97, 97);
+    z-index: 1; /* Keep the text on top of the background */
+}
+
+/* Keyframes for the arrow animation */
+@keyframes moveArrow {
+    0% {
+        left: 0; /* Start at the initial position */
+    }
+    50% {
+        left: 6px; /* Move the arrow to the right */
+    }
+    100% {
+        left: 0; /* Move the arrow back to the left */
+    }
 }
