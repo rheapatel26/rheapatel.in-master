@@ -492,21 +492,18 @@ body {
     opacity: 0.6;
 }
 
-/* Anchor styles (for the link around the heading and arrow) */
 a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from the parent element */
-    position: relative; /* To ensure positioning of the arrow */
+    text-decoration: none; 
+    color: inherit; 
+    position: relative; 
 }
 
-/* Heading styles */
 .certihead {
-    font-size: 1.4vw; /* White text to be visible over the video */
+    font-size: 1.4vw; 
     position: relative;
-    z-index: 1; /* Keep the text in front of the video */
+    z-index: 1; 
 }
 
-/* Arrow animations */
 .arrowtocerti, .arrowtocerti2 {
     width: 1.5vw;
     height: 1.5vw;
@@ -517,30 +514,28 @@ a {
 
 .arrowtocerti {
     transform: translateX(750%);
-    bottom: 1.5vw; /* Position the arrow under the heading */
+    bottom: 1.5vw; 
 }
 
 .arrowtocerti2 {
     transform: translateX(750%);
-    bottom: 6vw; /* Position the arrow under the heading */
+    bottom: 6vw; 
 }
 
-/* Text styles for the smaller heading (h5) */
 .h5head {
     margin-top: -1vw;
     color: rgb(97, 97, 97);
-    z-index: 1; /* Keep the text on top of the background */
+    z-index: 1; 
 }
 
-/* Keyframes for the arrow animation */
 @keyframes moveArrow {
     0% {
-        left: 0; /* Start at the initial position */
+        left: 0; 
     }
     50% {
-        left: 6px; /* Move the arrow to the right */
+        left: 6px; 
     }
     100% {
-        left: 0; /* Move the arrow back to the left */
+        left: 0; 
     }
 }
