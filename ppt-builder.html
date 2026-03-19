@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Builder — Slide Studio</title>
+    <meta name="description" content="Create stunning presentations with AI-powered charts, drag-drop editing, and LLM content generation.">
+    <link rel="stylesheet" href="ppt-builder.css">
+    <!-- SheetJS for Excel parsing -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <!-- Chart.js for chart generation -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- PptxGenJS for PPT export -->
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgenjs.bundle.js"></script>
+    <!-- interact.js for drag/resize -->
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.17/dist/interact.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html" class="back-btn" id="back-btn">
+                <span>←</span> Portfolio
+            </a>
+            <span class="app-title">Slide Studio</span>
+        </div>
+        <div class="top-bar-center">
+            <div class="template-select-wrapper">
+                <label>Template</label>
+                <select class="template-select" id="template-select">
+                    <option value="corporate-blue">Corporate Blue</option>
+                    <option value="modern-dark">Modern Dark</option>
+                    <option value="minimal-white">Minimal White</option>
+                    <option value="gradient-warm">Gradient Warm</option>
+                    <option value="tech-neon">Tech Neon</option>
+                </select>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <button class="btn btn-secondary btn-icon" id="add-slide-topbar" title="Add Slide">＋</button>
+            <button class="btn btn-secondary" id="api-key-btn" title="Set API Key">🔑 API Key</button>
+            <button class="btn btn-success" id="download-ppt-btn">
+                <span>⬇</span> Download PPT
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <div class="main-layout">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <!-- Upload Section -->
+            <div class="panel-section">
+                <div class="section-header">
+                    <span class="section-title">Data Source</span>
+                </div>
+                <div class="upload-zone" id="upload-zone">
+                    <span class="upload-icon">📊</span>
+                    <div class="upload-text">
+                        Drop your <strong>Excel / CSV</strong> file here<br>
+                        or click to browse
+                    </div>
+                    <input type="file" class="upload-input" id="file-input" accept=".xlsx,.xls,.csv">
+                </div>
+                <div id="file-info-container"></div>
+            </div>
+
+            <!-- Data Preview -->
+            <div class="panel-section" id="data-preview-section" style="display:none;">
+                <div class="section-header">
+                    <span class="section-title">Data Preview</span>
+                    <span class="section-badge" id="row-count-badge">0 rows</span>
+                </div>
+                <div class="data-preview-wrapper">
+                    <table class="data-preview-table" id="data-preview-table">
+                        <thead id="data-preview-head"></thead>
+                        <tbody id="data-preview-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chart Generator -->
+            <div class="panel-section" id="chart-gen-section" style="display:none;">
+                <div class="section-header">
+                    <span class="section-title">Generate Chart</span>
+                </div>
+                <div class="chart-type-row">
+                    <button class="chart-type-btn active" data-type="bar" title="Bar Chart">📊</button>
+                    <button class="chart-type-btn" data-type="line" title="Line Chart">📈</button>
+                    <button class="chart-type-btn" data-type="pie" title="Pie Chart">🥧</button>
+                    <button class="chart-type-btn" data-type="doughnut" title="Doughnut">🍩</button>
+                    <button class="chart-type-btn" data-type="scatter" title="Scatter">✦</button>
+                </div>
+                <div class="query-input-group">
+                    <input type="text" class="query-input" id="chart-query"
+                        placeholder='e.g. "hospital vs claims"'>
+                    <button class="btn btn-primary" id="generate-chart-btn">Go</button>
+                </div>
+            </div>
+
+            <!-- Charts Gallery -->
+            <div class="panel-section" id="charts-gallery-section">
+                <div class="section-header">
+                    <span class="section-title">Charts</span>
+                    <span class="section-badge" id="chart-count-badge">0</span>
+                </div>
+                <div class="charts-gallery" id="charts-gallery">
+                    <div class="empty-state">
+                        <span class="empty-state-icon">📉</span>
+                        <span class="empty-state-text">Upload data & generate charts to see them here</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER CANVAS -->
+        <div class="center-panel">
+            <div class="slide-toolbar">
+                <button class="btn btn-secondary" id="add-text-btn">＋ Text</button>
+                <button class="btn btn-secondary" id="clear-slide-btn">🗑 Clear</button>
+                <span class="slide-counter" id="slide-counter">Slide 1 / 1</span>
+            </div>
+
+            <div class="canvas-container" id="canvas-container">
+                <div class="slide-canvas template-corporate-blue" id="slide-canvas">
+                    <div class="slide-bg"></div>
+                </div>
+            </div>
+
+            <div class="slides-strip" id="slides-strip">
+                <!-- Slide thumbnails rendered dynamically -->
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+            <div class="panel-tabs">
+                <button class="panel-tab active" data-panel="llm-panel">🤖 AI Assistant</button>
+                <button class="panel-tab" data-panel="elements-panel">🧩 Elements</button>
+            </div>
+
+            <!-- LLM Panel -->
+            <div class="panel-content active" id="llm-panel">
+                <div class="llm-chat-messages" id="llm-chat-messages">
+                    <div class="chat-message chat-message-ai">
+                        👋 Hi! I'm your AI assistant. Upload an Excel file and ask me to analyze your data, generate
+                        insights, or write content for your slides. You can also ask for chart suggestions!
+                    </div>
+                </div>
+                <div class="llm-chat-input-area">
+                    <textarea class="llm-chat-input" id="llm-chat-input" placeholder="Ask for analysis or content..."
+                        rows="1"></textarea>
+                    <button class="btn btn-primary" id="llm-send-btn">↑</button>
+                </div>
+            </div>
+
+            <!-- Elements Panel -->
+            <div class="panel-content" id="elements-panel">
+                <div class="elements-grid">
+                    <div class="element-item" data-action="add-title">
+                        <span class="element-item-icon">🔤</span>
+                        <span class="element-item-label">Title</span>
+                    </div>
+                    <div class="element-item" data-action="add-subtitle">
+                        <span class="element-item-icon">📝</span>
+                        <span class="element-item-label">Subtitle</span>
+                    </div>
+                    <div class="element-item" data-action="add-body">
+                        <span class="element-item-icon">📄</span>
+                        <span class="element-item-label">Body Text</span>
+                    </div>
+                    <div class="element-item" data-action="add-bullet">
+                        <span class="element-item-icon">📋</span>
+                        <span class="element-item-label">Bullets</span>
+                    </div>
+                    <div class="element-item" data-action="add-box">
+                        <span class="element-item-icon">⬜</span>
+                        <span class="element-item-label">Shape</span>
+                    </div>
+                    <div class="element-item" data-action="add-divider">
+                        <span class="element-item-icon">➖</span>
+                        <span class="element-item-label">Divider</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Key Modal -->
+    <div class="modal-overlay" id="api-key-modal">
+        <div class="modal">
+            <div class="modal-title">🔑 Set Gemini API Key</div>
+            <div class="modal-subtitle">Enter your Google Gemini API key for AI-powered content generation.
+                <br><a href="https://aistudio.google.com/app/apikey" target="_blank"
+                    style="color:var(--accent);">Get a free key →</a>
+            </div>
+            <input type="password" class="api-key-input" id="api-key-input" placeholder="Paste your API key here...">
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="api-key-cancel">Cancel</button>
+                <button class="btn btn-primary" id="api-key-save">Save Key</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="ppt-builder.js"></script>
+</body>
+
+</html>
