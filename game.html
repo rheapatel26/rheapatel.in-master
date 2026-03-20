@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhea's World · Projects</title>
+  <meta name="description" content="Explore Rhea Patel's projects in an interactive pixel-art NYC scene. Walk through the city and enter buildings to discover each project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="game-nav">
+    <a href="index.html" class="nav-back">← Back to Home</a>
+    <span class="nav-title">RHEA'S WORLD</span>
+    <span class="nav-hint">WASD / Arrows to Move · E to Enter</span>
+  </nav>
+
+  <!-- ─── GAME WRAPPER ─── -->
+  <div class="game-wrapper">
+
+    <!-- Loading screen -->
+    <div id="loadingScreen">
+      <div class="loading-inner">
+        <p class="loading-title">LOADING WORLD…</p>
+        <div class="loading-bar-outer"><div id="loadingBar" class="loading-bar-inner"></div></div>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD Overlay -->
+    <div id="hud">
+      <div id="tooltip" class="tooltip hidden"></div>
+      <div id="buildingModal" class="building-modal hidden">
+        <div class="modal-inner">
+          <div id="modalTag" class="modal-tag"></div>
+          <div id="modalName" class="modal-name"></div>
+          <div id="modalDesc" class="modal-desc"></div>
+          <button id="modalEnter" class="modal-btn">Enter Building ↗</button>
+          <button id="modalClose" class="modal-close">✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transition overlay -->
+    <div id="fadeOverlay"></div>
+
+  </div>
+
+  <!-- ─── CONTROLS HINT BAR ─── -->
+  <div class="controls-bar">
+    <span>🕹 WASD / ↑↓←→ to move</span>
+    <span>⬡ Walk near a building</span>
+    <span>⌨ Press <kbd>E</kbd> to enter</span>
+    <span>🌆 5 projects to explore</span>
+  </div>
+
+  <!-- ─── FALLBACK PROJECT GRID ─── -->
+  <section class="fallback-section">
+    <div class="fallback-header">
+      <h2>Projects</h2>
+      <p>Can't run the game? Browse projects below.</p>
+    </div>
+    <div id="fallbackGrid" class="fallback-grid">
+      <!-- Populated by game.js -->
+    </div>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+</html>
