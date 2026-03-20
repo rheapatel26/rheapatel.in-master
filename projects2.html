@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhea's Desktop · Projects</title>
+  <meta name="description" content="Explore Rhea Patel's projects in a nostalgic retro desktop interface. Double-click folders to discover each project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projects2.css">
+</head>
+<body>
+
+  <!-- ─── BOOT SCREEN ─── -->
+  <div id="bootScreen">
+    <div class="boot-inner">
+      <div class="boot-logo">💾</div>
+      <p class="boot-text">RheaOS v2.0</p>
+      <p class="boot-sub">Loading desktop…</p>
+      <div class="boot-progress"><div id="bootBar"></div></div>
+    </div>
+  </div>
+
+  <!-- ─── DESKTOP ─── -->
+  <div id="desktop">
+
+    <!-- CRT Scanlines Overlay -->
+    <div class="crt-overlay"></div>
+
+    <!-- Desktop icons container -->
+    <div id="desktopIcons"></div>
+
+    <!-- Windows container -->
+    <div id="windowsContainer"></div>
+
+    <!-- Right-click context menu -->
+    <div id="contextMenu" class="context-menu hidden">
+      <div class="ctx-item" data-action="refresh">↻ Refresh</div>
+      <div class="ctx-item" data-action="arrange">▦ Arrange Icons</div>
+      <div class="ctx-divider"></div>
+      <div class="ctx-item" data-action="about">ℹ About RheaOS</div>
+      <div class="ctx-item" data-action="home">🏠 Back to Home</div>
+    </div>
+
+    <!-- About dialog -->
+    <div id="aboutDialog" class="about-dialog hidden">
+      <div class="about-titlebar">
+        <span>About RheaOS</span>
+        <button class="about-close">✕</button>
+      </div>
+      <div class="about-body">
+        <div class="about-logo">💾</div>
+        <p><strong>RheaOS v2.0</strong></p>
+        <p>A retro portfolio experience</p>
+        <p style="margin-top:8px; font-size:7px; color:#888;">Built by Rhea Patel · 2026</p>
+        <button class="about-ok">OK</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── TASKBAR ─── -->
+  <div id="taskbar">
+    <button id="startBtn" class="start-btn">
+      <span class="start-icon">🪟</span>
+      <span class="start-label">Start</span>
+    </button>
+    <div class="taskbar-divider"></div>
+    <div id="taskbarWindows" class="taskbar-windows"></div>
+    <div class="taskbar-tray">
+      <span id="trayTime" class="tray-time"></span>
+    </div>
+  </div>
+
+  <!-- Start Menu -->
+  <div id="startMenu" class="start-menu hidden">
+    <div class="start-menu-header">
+      <span class="start-menu-avatar">👩‍💻</span>
+      <span class="start-menu-name">Rhea Patel</span>
+    </div>
+    <div class="start-menu-items">
+      <a href="index.html" class="start-menu-item">🏠 Home</a>
+      <a href="game.html" class="start-menu-item">🎮 Projects (Game)</a>
+      <a href="ppt-builder.html" class="start-menu-item">📊 PPT Builder</a>
+      <div class="start-menu-divider"></div>
+      <div class="start-menu-item" id="menuAbout">ℹ️ About RheaOS</div>
+    </div>
+  </div>
+
+  <!-- ─── FALLBACK SECTION ─── -->
+  <section class="fallback-section">
+    <div class="fallback-header">
+      <h2>Projects</h2>
+      <p>Can't use the desktop? Browse projects below.</p>
+    </div>
+    <div id="fallbackGrid" class="fallback-grid"></div>
+  </section>
+
+  <script src="projects2.js"></script>
+</body>
+</html>
